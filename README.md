@@ -1,16 +1,16 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/kOqwghv0)
-# ML Project — [Название проекта]
+# ML Project — Прогноз стоимости заказа
 
-**Студент:** [ФИО / Student ID]
+**Студент:** Деговцов Кирилл Александрович
 
-**Группа:** [Группа]
+**Группа:** БИВ231
 
 
 ## Оглавление
 
 1. [Описание задачи](#описание-задачи)
 2. [Структура репозитория](#структура-репозитория)
-3. [Запуски](#быстрый-старт)
+3. [Запуск](#запуск)
 4. [Данные](#данные)
 5. [Результаты](#результаты)
 7. [Отчёт](#отчёт)
@@ -18,13 +18,13 @@
 
 ## Описание задачи
 
-<!-- Кратко опишите задачу: что предсказываем, какой датасет, метрика качества -->
+Модель предсказывает ожидаемую сумму покупки, опираясь на признаки события заказа, товарной категории, временной метки и пользовательской активности
 
-**Задача:** [Классификация / Регрессия / Кластеризация / ...]
+**Задача:** Регрессия
 
-**Датасет:** [Название и источник датасета]
+**Датасет:** eCommerce purchase history from jewelry store (https://www.kaggle.com/datasets/mkechinov/ecommerce-purchase-history-from-jewelry-store)
 
-**Целевая метрика:** [Accuracy / F1 / RMSE / ...]
+**Целевая метрика:** MAE, RMSE, R<sup>2</sup>
 
 
 ## Структура репозитория
@@ -49,7 +49,9 @@
 ├── tests
 │   └── test.py                 # Тесты пайплайна
 ├── requirements.txt
-└── README.md
+├── README.md
+├── Makefile
+└── .pre-commit-config.yaml 
 ```
 
 ## Запуск
@@ -57,8 +59,8 @@
 Этот блок замените способом запуска вашего сервиса.
 ```bash
 # 1. Клонировать репозиторий
-git clone <url>
-cd <repo-name>
+git clone https://github.com/hsemlcourse/hseml-group-project-brazilian_and_co.git
+cd hseml-group-project-brazilian_and_co
 
 # 2. Создать виртуальное окружение
 python -m venv .venv
@@ -67,6 +69,16 @@ source .venv/bin/activate   # Linux/macOS
 
 # 3. Установить зависимости
 pip install -r requirements.txt
+
+# 4. Установить зависимости и хуки
+make install
+make install-hooks
+
+# 5. Проверить код вручную (линтеры)
+   make lint
+
+# 6. Запуск хуков на всех файлах
+make run-hooks
 ```
 
 ## Данные
@@ -76,10 +88,18 @@ pip install -r requirements.txt
 
 ## Результаты
 Здесь коротко выпишите результаты.
-| Модель | [Метрика 1] | [Метрика 2] | Примечание |
-|--------|-------------|-------------|------------|
-| Baseline | — | — | |
-| Лучшая модель | — | — | |
+| Модель | MAE | RMSE | R<sup>2</sup> | Примечание |
+|--------|-------------|-------------|------------|------------|
+| Baseline (Linear Regression) | 141.43 | 178.88 | -0.0171 | |
+| Decision Tree | 102.40 | 137.91 | 0.4190 | |
+| Random Forest | 100.09 | 135.10 | 0.4424 | |
+| Gradient Boosting | 103.08 | 136.47 | 0.4311 | |
+| Hist Gradient Boosting | 100.70 | 133.71 | 0.4539 | |
+| XGBoost | 101.28 | 134.78 | 0.4451 | |
+| LightGBM | 101.66 | 134.74 | 0.4454 | |
+| Random Forest (Tuned) | 99.13 | 134.64 | 0.4462 | |
+| Hist Gradient Boosting (Tuned) | 98.94 | 132.60 | 0.4629 | |
+| Лучшая модель (Hist Gradient Boosting (Tuned)) | 98.94 | 132.60 | 0.4629 | |
 
 
 ## Отчёт
