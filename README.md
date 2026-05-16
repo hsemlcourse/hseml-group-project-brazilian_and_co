@@ -88,18 +88,18 @@ make run-hooks
 
 ## Результаты
 Здесь коротко выпишите результаты.
-| Модель | MAE | RMSE | R<sup>2</sup> | Примечание |
-|--------|-------------|-------------|------------|------------|
-| Baseline (Linear Regression) | 141.43 | 178.88 | -0.0171 | |
-| Decision Tree | 102.40 | 137.91 | 0.4190 | |
-| Random Forest | 100.09 | 135.10 | 0.4424 | |
-| Gradient Boosting | 103.08 | 136.47 | 0.4311 | |
-| Hist Gradient Boosting | 100.70 | 133.71 | 0.4539 | |
-| XGBoost | 101.28 | 134.78 | 0.4451 | |
-| LightGBM | 101.66 | 134.74 | 0.4454 | |
-| Random Forest (Tuned) | 99.13 | 134.64 | 0.4462 | |
-| Hist Gradient Boosting (Tuned) | 98.94 | 132.60 | 0.4629 | |
-| Лучшая модель (Hist Gradient Boosting (Tuned)) | 98.94 | 132.60 | 0.4629 | |
+| Модель | MAE | RMSE | R<sup>2</sup> |
+|--------|-------------|-------------|------------|
+| Baseline (Linear Regression) | 141.43 | 178.88 | -0.0171 |
+| Decision Tree | 102.40 | 137.91 | 0.4190 |
+| Random Forest | 100.09 | 135.10 | 0.4424 |
+| Gradient Boosting | 103.08 | 136.47 | 0.4311 |
+| Hist Gradient Boosting | 100.70 | 133.71 | 0.4539 |
+| XGBoost | 101.28 | 134.78 | 0.4451 |
+| LightGBM | 101.66 | 134.74 | 0.4454 |
+| Random Forest (Tuned) | 99.13 | 134.64 | 0.4462 |
+| Hist Gradient Boosting (Tuned) | 98.94 | 132.60 | 0.4629 |
+| Лучшая модель (Hist Gradient Boosting (Tuned)) | 98.94 | 132.60 | 0.4629 |
 
 
 ## Отчёт
