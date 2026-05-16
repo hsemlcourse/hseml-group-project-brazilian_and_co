@@ -75,7 +75,7 @@ make install
 make install-hooks
 
 # 5. Проверить код вручную (линтеры)
-   make lint
+make lint
 
 # 6. Запуск хуков на всех файлах
 make run-hooks
