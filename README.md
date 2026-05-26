@@ -81,6 +81,27 @@ make lint
 make run-hooks
 ```
 
+Запуск api
+```bash
+python -m uvicorn src.main:app --reload
+```
+
+Пример запроса
+```bash
+curl -X POST "http://127.0.0.1:8000/predict" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "event_time": "2024-03-15T12:30:00Z",
+    "category_id": 12,
+    "category_alias": "jewelry.ring",
+    "brand_id": 45,
+    "gender": "female",
+    "color": "gold",
+    "metal": "gold",
+    "gem": "diamond"
+  }'
+```
+
 ## Данные
 - `data/raw/` — исходные файлы
 - `data/processed/` — предобработанные данные

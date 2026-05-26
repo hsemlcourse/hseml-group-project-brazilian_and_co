@@ -1,0 +1,28 @@
+{
+  "model_name": "HistGradientBoostingRegressor + full preprocessing pipeline",
+  "best_params": {
+    "model__max_iter": 300,
+    "model__max_depth": 12,
+    "model__learning_rate": 0.05
+  },
+  "features_expected_by_api": [
+    "event_time",
+    "category_id",
+    "category_alias",
+    "brand_id",
+    "gender",
+    "color",
+    "metal",
+    "gem"
+  ],
+  "validation_metrics": {
+    "mae": 99.27,
+    "rmse": 132.74,
+    "r2": 0.4618
+  },
+  "test_metrics": {
+    "mae": 101.66,
+    "rmse": 137.17,
+    "r2": 0.4019
+  }
+}
